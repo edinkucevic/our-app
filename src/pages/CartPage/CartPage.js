@@ -17,19 +17,19 @@ export default function CartPage() {
             alt="Logo"
             className="w-24 h-18"
           /> */}
-          <h1 className="text-lg text-slate-900 font-semibold bg-slate-200 p-1 rounded-lg">
+          <h1 className="text-lg text-slate-50 font-semibold bg-red-500 p-1 rounded-lg">
             YOUR SHOPPING CART IS EMPTY
           </h1>
-          <p className="text-md text-slate-900 text-center font-light w-4/6">
+          <p className="text-md text-slate-50  text-center font-light w-4/6">
             You still have nothing in your cart. Check out our large selection
             product and start shopping.
           </p>
-          <button className="text-xl text-slate-800 text-center bg-orange-400 p-2 rounded-xl">
+          <button className="text-xl text-slate-50 text-center bg-green-500 p-2 rounded-xl">
             <Link to="/">START SHOPPING</Link>
           </button>
         </div>
       ) : (
-        <div className="flex flex-col justify-center items-center">
+        <div className="flex flex-col justify-center text-slate-50 items-center">
           {cartItems.map((product) => (
             <div
               key={product.id}
@@ -44,14 +44,14 @@ export default function CartPage() {
                 <p className="text-bold">Amout:</p>
                 <button
                   onClick={() => decreaseQuantity(product.id)}
-                  className="rounded border-2 border-slate-700 h-auto px-1 text-center mx-3"
+                  className="rounded border-2 border-red-700 h-auto px-1 text-center mx-3"
                 >
                   -
                 </button>
                 <p>{product.quantity}</p>
                 <button
                   onClick={() => increaseQuantity(product.id)}
-                  className="rounded border-2 border-slate-700 h-auto px-1 text-center mx-3"
+                  className="rounded border-2 border-red-700 h-auto px-1 text-center mx-3"
                 >
                   +
                 </button>
@@ -63,7 +63,8 @@ export default function CartPage() {
                 Total Amout: {product.price * product.quantity}{" "}
                 {product.currency}
               </div>
-              <button onClick={() => removeFromCart(product.id)}>X</button>
+              <button onClick={() => removeFromCart(product.id)}
+              className=" rounded bg-red-700 mt-1 h-11 px-2 text-cente mx-3">X</button>
             </div>
           ))}
         </div>

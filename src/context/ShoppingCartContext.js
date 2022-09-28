@@ -58,6 +58,8 @@ const ShoppingCartContextProvider = ({ children }) => {
     });
   };
 
+  
+
   const values = {
     cartItems,
     setCartItems,
@@ -66,7 +68,8 @@ const ShoppingCartContextProvider = ({ children }) => {
     increaseQuantity,
     decreaseQuantity,
   };
-
+  
+  
   return (
     // the Provider gives access to the context to its children
     <ShoppingCartContext.Provider value={values}>
